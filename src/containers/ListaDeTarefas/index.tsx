@@ -1,9 +1,8 @@
 import { useSelector } from 'react-redux'
 
 import Tarefa from '../../components/Tarefa'
-import { Container } from './styles'
+import { Container, Resultado } from './styles'
 import { RootReducer } from '../../store'
-import { Prioridade } from '../../ultils/enums/Tarafa'
 
 const ListaDeTarefas = () => {
   const { itens } = useSelector((state: RootReducer) => state.tarefas)
@@ -34,18 +33,29 @@ const ListaDeTarefas = () => {
     }
   }
 
+  const exibeResultadoFiltragem = (quantidade: number) => {
+    let mensagem = ''
+    const complementacao =
+      termo !== undefined && termo.length > 0 ? `e '${termo}'` : ''
+
+    if (criterio === 'todas') {
+      mensagem = `${quantidade} tarefas encontradas como: todas ${complementacao}`
+    } else {
+      mensagem = `${quantidade} tarefas encontradas como: todas "${`${criterio}=${valor}`}" ${complementacao}`
+    }
+
+    return mensagem
+  }
+
+  const tarefas = filtraDeTarefas()
+  const mensagem = exibeResultadoFiltragem(tarefas.length)
+
   return (
     <Container>
-      <p>
-        2 tarefas marcadas como: &quot;categoria&ldquo; e &quot;{termo}&ldquo;
-      </p>
+      <Resultado>{mensagem}</Resultado>
+
       <ul>
-        <li>{termo}</li>
-        <li>{criterio}</li>
-        <li>{valor}</li>
-      </ul>
-      <ul>
-        {filtraDeTarefas().map((t) => (
+        {tarefas.map((t) => (
           <li key={t.titulo}>
             <Tarefa
               id={t.id}
