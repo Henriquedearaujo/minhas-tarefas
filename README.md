@@ -1,3 +1,32 @@
+# To-Do_Minhas-tarefas
+
+## Descrição
+Aplicação de lista de tarefas desenvolvida como uma SPA (Single Page Application) utilizando React.js. Este projeto permite gerenciar suas tarefas diárias de forma eficiente e organizada.
+
+## Bibliotecas Utilizadas
+- **Redux**: Para gestão de estado.
+- **React Router DOM**: Para navegação entre páginas.
+- **Redux Toolkit**: Para simplificar a configuração do Redux.
+- **React Route**: Para definir rotas na aplicação.
+
+## Funcionalidades
+- **Adicionar Tarefa**: Permite adicionar novas tarefas à lista.
+- **Editar Tarefa**: Permite editar as informações de uma tarefa existente.
+- **Remover Tarefa**: Permite remover uma tarefa da lista.
+- **Marcar como Concluída**: Permite marcar uma tarefa como concluída.
+- **Pendente**: quando adiciona tarefa ven como padrão pendente
+- **Pesquisar Tarefas**: Permite pesquisar tarefas na lista.
+- **Status da Tarefa**: Define o status da tarefa como:
+  - Importante
+  - Urgente
+  - Normal
+
+## Design
+Confira o design da aplicação no Figma:
+[Minhas Tarefas](https://www.figma.com/design/THHYAAsx1gJM0XUaF7qiOk/Minhas-Tarefas?node-id=0-1&t=BxG2X7IhhoCvywwE-0).
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
